@@ -33,7 +33,7 @@ function SideBar(){
                 {/*<!-- Nav Item - Pages -->*/}
                 <li className="nav-item">
                     <a className="nav-link collapsed" href="/">
-                        <i className="fas fa-fw fa-folder"></i>
+                        <i className="fas fa-fw fa-user"></i>
                         <span>Usuarios</span>
                     </a>
                 </li>
@@ -41,14 +41,14 @@ function SideBar(){
                 {/*<!-- Nav Item - Charts -->*/}
                 <li className="nav-item">
                     <a className="nav-link" href="/">
-                        <i className="fas fa-fw fa-chart-area"></i>
+                        <i className="fas fa-fw fa-box-open"></i>
                         <span>Productos</span></a>
                 </li>
 
                 {/*<!-- Nav Item - Tables -->*/}
                 <li className="nav-item">
                     <a className="nav-link" href="/">
-                        <i className="fas fa-fw fa-table"></i>
+                        <i className="fas fa-fw fa-tags"></i>
                         <span>Categorias</span></a>
                 </li>
 
