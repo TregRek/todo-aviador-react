@@ -1,6 +1,6 @@
 import React from 'react';
 import foto from '../assets/images/darth-vader.jpg';
-
+import {Link} from 'react-router-dom'
 function TopBar(){
     return(
         <React.Fragment>
@@ -37,10 +37,10 @@ function TopBar(){
 
 						{/*<!-- Nav Item - User Information -->*/}
 						<li className="nav-item dropdown no-arrow">
-							<a className="nav-link dropdown-toggle" href="/" id="userDropdown">
+							<Link className="nav-link dropdown-toggle" exact="true" to="/" id="userDropdown">
 								<span className="mr-2 d-none d-lg-inline text-gray-600 small">Administrador</span>
 								<img className="img-profile rounded-circle" src={foto} alt="Darth Vader" width="60"/>
-							</a>
+							</Link>
 						</li>
 
 					</ul>

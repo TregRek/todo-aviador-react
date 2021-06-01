@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
-let productList = [];
-class ProductList extends Component{
+let userList = [];
+class UserList extends Component{
     
 	constructor(props){
         super(props)
         this.state = {
-            products:[],
+            users:[],
 			done: false
         }
     }
@@ -18,19 +18,19 @@ class ProductList extends Component{
     }
 
 	componentDidMount(){
-		this.apiCall('api/products', this.cargarProductos)
+		this.apiCall('api/users', this.cargarUsuarios)
 	}
 
-	cargarProductos = (data) => {
-		data.products.forEach(product => {
-			this.apiCall('api/products/'+product.id, this.detalleProducto)
+	cargarUsuarios = (data) => {
+		data.users.forEach(user => {
+			this.apiCall('api/users/'+user.id, this.detalleUsuario)
 		})
-		this.setState({products:productList})
+		this.setState({users:userList})
 	}
 
-	detalleProducto = (data) => {
-		let productPush = data
-		productList.push(productPush)
+	detalleUsuario = (data) => {
+		let userPush = data
+		userList.push(userPush)
 		this.setState({done:true})
 	}
 
@@ -38,12 +38,14 @@ class ProductList extends Component{
 	render(){
 		return(
 			<React.Fragment>
-						{/*<!-- PRODUCTS LIST -->*/}
+						{/*<!-- USER LIST -->*/}
 						
+						
+						<br></br>
 						{/*<!-- DataTales Example -->*/}
 						<div className="card shadow mb-4">
 							<div className="card-header py-3">
-								<h1 className="h3 mb-2 text-gray-800">All products in the Database</h1>
+								<h1 className="h3 mb-2 text-gray-800">All users in the Database</h1>
                         	</div>
 							<div className="card-body">
 								<div className="table-responsive">
@@ -51,31 +53,31 @@ class ProductList extends Component{
 										<thead>
 											<tr>
 												<th>Id</th>
-												<th>Nombre</th>
-												<th>Descripción</th>
-												<th>Precio</th>
-												<th>Stock</th>
+												<th>Usuario</th>
+												<th>Nombres</th>
+												<th>Apellidos</th>
+												<th>Email</th>
 											</tr>
 										</thead>
 										<tfoot>
 											<tr>
 												<th>Id</th>
-												<th>Nombre</th>
-												<th>Descripción</th>
-												<th>Precio</th>
-												<th>Stock</th>
+												<th>Usuario</th>
+												<th>Nombres</th>
+												<th>Apellidos</th>
+												<th>Email</th>
 											</tr>
 										</tfoot>
 										<tbody>
 										{
-                    						this.state.products.map((product,index)=>{
+                    						this.state.users.map((user,index)=>{
                         						return  <tr key={index}>
-															<td>{product.id_product}</td>
-															<td>{product.name_product}</td>
-															<td>{product.description}</td>
-															<td>S/.{product.price}</td>
-															<td>{product.stock}</td>
-														</tr>
+															<td>{user.id_user}</td>
+															<td>{user.user_name}</td>
+															<td>{user.first_name}</td>
+															<td>{user.last_name}</td>
+															<td>{user.email}</td>
+												</tr>
                     						})
                 						}
 										</tbody>
@@ -88,4 +90,4 @@ class ProductList extends Component{
 	}
 	
 }
-export default ProductList;
+export default UserList;

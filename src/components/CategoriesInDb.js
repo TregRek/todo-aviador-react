@@ -21,17 +21,20 @@ class CategoriesInDb extends Component {
     }
 
     cargarCategorias = (data) => {
-        let categoriesInDataBase = Object.keys(data.countByCategory)
+        let categoriesInDataBase = data.countByCategory
         let arregloCategorias = []
-        categoriesInDataBase.forEach(category => {
+        Object.entries(categoriesInDataBase).map(category => {
             let categoriaPush = {
-                nombre: category
+                nombre: category[0],
+                cantidad: category[1]
             }
             arregloCategorias.push(categoriaPush)
+            return ''
         })
         this.setState({
             categoryList: arregloCategorias
         });
+        
     }
 
     render(){
