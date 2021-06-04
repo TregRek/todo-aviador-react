@@ -18,6 +18,7 @@ class UserList extends Component{
     }
 
 	componentDidMount(){
+		userList = []
 		this.apiCall('api/users', this.cargarUsuarios)
 	}
 

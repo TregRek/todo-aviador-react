@@ -18,6 +18,7 @@ class ProductList extends Component{
     }
 
 	componentDidMount(){
+		productList = []
 		this.apiCall('api/products', this.cargarProductos)
 	}
 
